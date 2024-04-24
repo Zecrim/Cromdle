@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(38, 42, 48);
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+
+hr {
+    background-color: black;
+}
+
+input {
+    color: white;
+    width: 1.5rem;
+    margin: 5px;
+    padding: 15px;
+    text-transform: uppercase;
+    background-color: rgb(38, 42, 48);
+    border: rgb(78, 76, 76) solid 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+button {
+    background-color: #008CBA;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+}
+button:hover {
+    cursor: pointer;
+    background-color:#71dcff;
+    transition-duration: .4s;
+}
