@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Jersey+25&display=swap');
 
+* {
+    display: flexbox;
+}
 body {
     background-color: rgb(38, 42, 48);
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-container {
@@ -33,12 +39,13 @@ body {
     opacity: 0;
 }
 
-h1 {
-    color: white;
+.modal-header {
+    color:#2328a4
 }
 
-hr {
-    background-color: black;
+h1 {
+    color: white;
+    font-family: "Jersey 25";
 }
 
 input {
@@ -51,8 +58,28 @@ input {
     background-color: rgb(38, 42, 48);
     border: rgb(78, 76, 76) solid 2px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    font-family: 'Fjalla One';
 }
 
+input:invalid {
+    animation: shake .3s;
+}
+
+@keyframes shake {
+    25% {
+        transform: translate(4px);
+    }
+    50% {
+        transform: translate(-4px);
+    }
+    75% {
+        transform: translate(4px);
+    }
+}
+li {
+    text-align: left;
+    font-size: 20px;
+}
 button {
     background-color: #008CBA;
     border: none;

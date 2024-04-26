@@ -12,12 +12,11 @@
     <!-- <button>Rules</button> -->
     <div class="modal-container">
         <div class="modal">
-            <h1>Welcome to my wordle clone!</h1>
+            <h1 class="modal-header">Welcome to my wordle clone!</h1>
             <h2>To play input any real 5 letter word into the boxes below!</h2>
             <ul>
-                <li>If a letters color doesn't change it means that the word you're looking for doesn't contain that letter</li>
-                <li>If a letter turns yellow that means that the word contains that letter but not in that location</li>
-                <li>If a letter turns green that means that both the letter and the location are correct!</li>
+                <li>You get 6 tries to guess the word.</li>
+                <li>The color of the tiles will change to show you how close your guess was.</li>
                 <li>Figure out the word to win!</li>
             </ul>
             <button type="button" id="start">Start Game</button>
@@ -72,14 +71,14 @@
     <button type="button" id="submit">Guess!</button>
     <div class="modal-container" id="win">
         <div class="modal">
-            <h1>You Won!</h1>
+            <h1 class="modal-header">You Won!</h1>
             <h2>Congratulation! Want to play again?</h2>
             <button type="button" id="again">Start New Game</button>
         </div>
     </div>
     <div class="modal-container" id="lose">
         <div class="modal">
-            <h1>You Lost</h1>
+            <h1 class="modal-header">You Lost</h1>
             <h2>Want to try again?</h2>
             <button type="button" id="try-again">Start New Game</button>
         </div>

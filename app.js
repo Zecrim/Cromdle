@@ -14,6 +14,7 @@ const guesses = $('.guesses')
 const startBtn = $('#start')
 const againBtn = $('#again')
 const tryAgainBtn = $('#try-again')
+const inputs = $$('input')
 
 const guessBtn = $('#submit')
 const letters1 = $$('.letter1')
@@ -79,13 +80,9 @@ function submitGuess() {
   assignLetters()
   wordList.forEach((word) => {
     if (letter1 + letter2 + letter3 + letter4 + letter5 === word) {
-  console.log(letter1 + letter2 + letter3 + letter4 + letter5)
   checkAnswer()
   disableBoxes()
   if (turn <= 6) (turn++)
-  } else {
-    window.moveBy('50px', '50px')
-    console.log('he')
   }
   loseModal()
   })
@@ -207,7 +204,6 @@ function checkAnswer() {
     letter5 = ''
     disableBoxes()
     currentAnswer = answerList[Math.floor(Math.random() * answerList.length)].split('') // decides the current answer randomly
-    console.log(currentAnswer)
     winModalEl.classList.remove('show')
     loseModalEl.classList.remove('show')
     modal.classList.add('show')
