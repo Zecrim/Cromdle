@@ -2,11 +2,6 @@
 body {
     background-color: rgb(38, 42, 48);
     text-align: center;
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0; */
 }
 
 .modal-container {
@@ -68,4 +63,5 @@ button:hover {
     cursor: pointer;
     background-color:#71dcff;
     transition-duration: .4s;
+    
 }

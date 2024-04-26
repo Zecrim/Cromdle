@@ -9,9 +9,12 @@ function $$(cssSelector) {
 }
 const modal = $('.modal-container')
 const winModalEl = $('#win')
+const loseModalEl = $('#lose')
 const guesses = $('.guesses')
 const startBtn = $('#start')
 const againBtn = $('#again')
+const tryAgainBtn = $('#try-again')
+
 const guessBtn = $('#submit')
 const letters1 = $$('.letter1')
 const letters2 = $$('.letter2')
@@ -31,7 +34,6 @@ let letter5 = ''
 const yellow = 'rgb(181, 159, 59)'
 const green = 'rgb(83, 141, 78)'
 const wallColor = 'rgb(38, 42, 48)'
-let currentGuess = ['', '', '', '', '']
 let currentAnswer = ''
 
 // Lets you type smoothly by putting focus on the next or previous element based on what you press
@@ -47,19 +49,29 @@ guesses.addEventListener('keydown', function(e){
       e.target.previousElementSibling.focus();
     }
 }) 
+// lets you press the guess button with enter
+guesses.addEventListener('keydown', function(e){
+  if ( e.key == "Enter"){
+    e.preventDefault
+    guessBtn.click();
+    }
+}) 
 
+//closes the start screen
 function closeModal() {
   if (turn == 0) {turn++}
-  console.log(turn)
   modal.classList.remove('show')
 }
 
+//win screen
 function winModal() {
   if (letter1 === currentAnswer[0] && letter2 === currentAnswer[1] && letter3 === currentAnswer[2] && letter4 === currentAnswer[3] && letter5 === currentAnswer[4]) {
-    console.log('you win!')
     wins++
     winModalEl.classList.add('show')
 }
+}
+function loseModal() {
+  if (turn === 7) {loseModalEl.classList.add('show')}
 }
 
 //the function that gets played when you make a guess
@@ -70,11 +82,16 @@ function submitGuess() {
   console.log(letter1 + letter2 + letter3 + letter4 + letter5)
   checkAnswer()
   disableBoxes()
-  if (turn < 6) (turn++)
+  if (turn <= 6) (turn++)
+  } else {
+    window.moveBy('50px', '50px')
+    console.log('he')
   }
+  loseModal()
   })
 }
 
+//assigns the current guess to variables to be used
 function assignLetters() {
   if (turn === 1) {
     letter1 = letters1[0].value
@@ -126,6 +143,7 @@ function assignLetters() {
   }
 }
 
+// disables the boxes so you can't type in them on the wrong turn
 function disableBoxes() {
   if(turn === 1) {
     letters1.forEach((letter) => {letter.disabled = true})
@@ -148,8 +166,7 @@ function disableBoxes() {
 }
 
 function checkAnswer() {
-  // if (!letter1.disabled && !letter2.disabled && !letter3.disabled && !letter4.disabled && !letter5.disabled) {
-    //chekcs to see if any yellow letters
+    //chekcs to see if any yellow letters or green letters
     if (letter1 === currentAnswer[0] ) {
       letters[0].style.backgroundColor = green
     } else if (letter1 === currentAnswer[0] || letter1 === currentAnswer[1] || letter1 === currentAnswer[2] || letter1 === currentAnswer[3] || letter1 === currentAnswer[4]) {
@@ -175,10 +192,11 @@ function checkAnswer() {
     } else if (letter5 === currentAnswer[0] || letter5 === currentAnswer[1] || letter5 === currentAnswer[2] || letter5 === currentAnswer[3] || letter5 === currentAnswer[4]) {
       letters[4].style.backgroundColor = yellow
     }  
-    winModal()
+    winModal()//checks to see if you won
     }
 
   function init() {
+    //starting the game
     reset()
     turn = 0
     letters = ''
@@ -191,6 +209,7 @@ function checkAnswer() {
     currentAnswer = answerList[Math.floor(Math.random() * answerList.length)].split('') // decides the current answer randomly
     console.log(currentAnswer)
     winModalEl.classList.remove('show')
+    loseModalEl.classList.remove('show')
     modal.classList.add('show')
   }
 
@@ -221,10 +240,9 @@ function checkAnswer() {
 
     }
 
-  console.log(turn)
-
-
   init()
   startBtn.addEventListener('click', closeModal)
   guessBtn.addEventListener('click', submitGuess)
   againBtn.addEventListener('click', init)
+  tryAgainBtn.addEventListener('click', init)
+
