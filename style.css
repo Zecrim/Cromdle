@@ -9,7 +9,10 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+h1 {
+    color: white;
+    font-family: "Jersey 25";
+}
 .modal-container {
     display: flex;
     align-items: center;
@@ -43,10 +46,7 @@ body {
     color:#2328a4
 }
 
-h1 {
-    color: white;
-    font-family: "Jersey 25";
-}
+
 
 input {
     color: white;
