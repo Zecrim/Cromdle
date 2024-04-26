@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Jersey+25&display=swap');
 
-* {
-    display: flexbox;
-}
 body {
     background-color: rgb(38, 42, 48);
     text-align: center;
@@ -46,8 +43,6 @@ h1 {
     color:#2328a4
 }
 
-
-
 input {
     color: white;
     width: 1.5rem;
@@ -61,21 +56,6 @@ input {
     font-family: 'Fjalla One';
 }
 
-input:invalid {
-    animation: shake .3s;
-}
-
-@keyframes shake {
-    25% {
-        transform: translate(4px);
-    }
-    50% {
-        transform: translate(-4px);
-    }
-    75% {
-        transform: translate(4px);
-    }
-}
 li {
     text-align: left;
     font-size: 20px;

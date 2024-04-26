@@ -232,6 +232,8 @@ function checkAnswer() {
     letters3.forEach((letter) => {letter.style.backgroundColor = wallColor})
     letters4.forEach((letter) => {letter.style.backgroundColor = wallColor})
     letters5.forEach((letter) => {letter.style.backgroundColor = wallColor})
+    letters6.forEach((letter) => {letter.style.backgroundColor = wallColor})
+
 
 
     }
@@ -241,4 +243,3 @@ function checkAnswer() {
   guessBtn.addEventListener('click', submitGuess)
   againBtn.addEventListener('click', init)
   tryAgainBtn.addEventListener('click', init)
-
