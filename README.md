@@ -14,6 +14,7 @@
 *CSS
 *HTML
 ### Next Steps
-Keyboard that greys out used letters
-Dark/Light Mode
-Hard Mode
+* Keyboard that greys out used letters
+* End game results
+* Dark/Light Mode
+* Hard Mode
