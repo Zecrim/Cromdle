@@ -6,9 +6,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <script type="module" src="./app.js" defer></script>
+    <form autocomplete="off">
 </head>
 <body>
-    
+    <!-- <button>Rules</button> -->
+    <div class="modal-container">
+        <div class="modal">
+            <h1>Welcome to my wordle clone!</h1>
+            <h2>To play input any real 5 letter word into the boxes below!</h2>
+            <ul>
+                <li>If a letters color doesn't change it means that the word you're looking for doesn't contain that letter</li>
+                <li>If a letter turns yellow that means that the word contains that letter but not in that location</li>
+                <li>If a letter turns green that means that both the letter and the location are correct!</li>
+                <li>Figure out the word to win!</li>
+            </ul>
+            <button type="button" id="start">Start Game</button>
+        </div>
+    </div>
     <h1>Wordle Clone</h1>
 
     <div class="guesses">
@@ -55,6 +69,13 @@
             <input class="letter6" type="text" maxlength="1" name="letter5" />
         </div>
     </div>
-    <button id="submit">Guess!</button>
+    <button type="button" id="submit">Guess!</button>
+    <div class="modal-container" id="win">
+        <div class="modal">
+            <h1>You Won!</h1>
+            <h2>Congratulation! Want to play again?</h2>
+            <button type="button" id="again">Start New Game</button>
+        </div>
+    </div>
 </body>
 </html>

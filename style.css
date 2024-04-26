@@ -1,6 +1,41 @@
+
 body {
     background-color: rgb(38, 42, 48);
     text-align: center;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0; */
+}
+
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.modal {
+    background-color: rgb(220, 212, 212);
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+}
+
+.modal-container.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container #win {
+    opacity: 0;
 }
 
 h1 {
@@ -17,6 +52,7 @@ input {
     margin: 5px;
     padding: 15px;
     text-transform: uppercase;
+    text-align: center;
     background-color: rgb(38, 42, 48);
     border: rgb(78, 76, 76) solid 2px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
