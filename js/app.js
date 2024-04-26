@@ -1,5 +1,5 @@
-import { answerList } from "./modules/answerlist.js"
-import { wordList } from "./modules/wordlist.js"
+import { answerList } from "../modules/answerlist.js"
+import { wordList } from "../modules/wordlist.js"
 
 function $(cssSelector) {
   return document.querySelector(cssSelector)
